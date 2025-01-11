@@ -1,0 +1,31 @@
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+#header .navbar {
+  padding: 5px;
+  border-radius: 20px;
+  background-color: #b380cc;
+  box-shadow: 0px 0px 10px 0px #8cbfe6;
+}
+#header .navbar .container-fluid {
+  border-radius: 20px;
+  background-color: #d940b3;
+  box-shadow: 0px 0px 10px 0px #ff0099;
+}
+#header .navbar .container-fluid .navbar-brand {
+  padding: 5px;
+  margin: 20px auto;
+  border-radius: 20px;
+  border: 1px solid #aaa;
+  background-color: #d940b3;
+  box-shadow: 0px 0px 10px 0px #ff0099;
+}
+#header .navbar .container-fluid .navbar-brand img {
+  width: 50px;
+  height: 50px;
+}
+
+/*# sourceMappingURL=header.css.map */
