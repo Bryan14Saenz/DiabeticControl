@@ -1,5 +1,7 @@
 @import 'header';
 @import 'inicio';
+@import 'agregar';
+@import 'ver';
 @import 'footer';
 
 html {
@@ -9,6 +11,7 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
+  height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -16,8 +19,4 @@ body {
 .main-agregar,
 .main-ver {
   display: none;
-  height: 100vh;
-  background-color: $colorQuinto;
-  margin: 10px;
-  padding: 10px;
 }

@@ -1,0 +1,40 @@
+.main-agregar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 80%;
+  padding: 20px;
+  margin: 20px auto;
+}
+.main-agregar p {
+  font-size: 1.5rem;
+}
+.main-agregar form {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #b380cc;
+  box-shadow: 0px 0px 10px 0px #8cbfe6;
+}
+.main-agregar form div {
+  width: 80%;
+  margin: 0 auto;
+}
+.main-agregar form div input {
+  padding: 5px 10px;
+  font-size: 1.5rem;
+}
+.main-agregar form div label {
+  font-size: 1.5rem;
+}
+.main-agregar form button {
+  padding: 5px 10px;
+  font-size: 1.5rem;
+  transition: all 0.5s linear;
+}
+.main-agregar form button:hover {
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=agregar.css.map */

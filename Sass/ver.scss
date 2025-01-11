@@ -1,0 +1,64 @@
+@import 'variables';
+@import 'mixin';
+
+.main-ver {
+  @include display();
+  flex-direction: column;
+  text-align: center;
+  width: 80%;
+  padding: 20px;
+  margin: 20px auto;
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  #btnActualizar {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 1.5rem;
+    transition: all 0.5s linear;
+  }
+
+  form {
+    display: flex;
+    width: 40%;
+    margin: 20px auto;
+
+    input {
+      padding: 5px 10px;
+      font-size: 1.5rem;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    button {
+      padding: 5px 10px;
+      font-size: 1.5rem;
+    }
+  }
+
+  table {
+    width: 80%;
+    margin: 0 auto;
+
+    thead {
+      tr {
+        th {
+          font-size: 1.5rem;
+          border: 1px solid #aaa;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

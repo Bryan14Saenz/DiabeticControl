@@ -68,13 +68,101 @@
       </section>
 
       <!-- Agregar Paciente -->
-      <section class="main-agregar">
-        <h2>Agregar Paciente</h2>
+      <section class="main-agregar" style="display: none;">
+        <p>Agrega un nuevo paciente con los siguientes datos.</p>
+        <form id="formAgregar">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              placeholder="Bryan"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input
+              type="text"
+              class="form-control"
+              id="apellido"
+              placeholder="Sanchez"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="fehcaNacimiento" class="form-label"
+              >FechaNacimiento</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="fechaNacimiento"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="teléfono" class="form-label">Teléfono</label>
+            <input
+              type="number"
+              class="form-control"
+              id="teléfono"
+              placeholder="8557-6896"
+              maxlength="8"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="id" class="form-label">Id</label>
+            <input
+              type="text"
+              class="form-control"
+              id="id"
+              placeholder="041-140502-1001D"
+              required
+            />
+          </div>
+          <button type="submit" id="btnGuardar" class="btn btn-primary">
+            Guardar
+          </button>
+        </form>
       </section>
 
       <!-- Ver Pacientes -->
-      <section class="main-ver">
-        <h2>Ver Pacientes</h2>
+      <section class="main-ver" style="display: none;">
+        <p>Selecciona un pacientes.</p>
+        <button
+          type="button"
+          id="btnActualizar"
+          class="btn btn-outline-primary"
+        >
+          Actualizar Paciente
+        </button>
+        <form>
+          <input
+            id="inputBuscar"
+            class="form-control me-2"
+            type="search"
+            placeholder="Buscar por nombre"
+          />
+          <button id="btnBuscar" class="btn btn-outline-success" type="submit">
+            Buscar
+          </button>
+        </form>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Teléfono</th>
+              <th scope="col">Fecha Nacimiento</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
       </section>
     </main>
 

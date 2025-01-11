@@ -1,0 +1,46 @@
+@import 'variables';
+@import 'mixin';
+
+.main-agregar {
+  @include display();
+  flex-direction: column;
+  text-align: center;
+  width: 80%;
+  padding: 20px;
+  margin: 20px auto;
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  form {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: $colorTercero;
+    box-shadow: 0px 0px 10px 0px $colorSegundo;
+
+    div {
+      width: 80%;
+      margin: 0 auto;
+
+      input {
+        padding: 5px 10px;
+        font-size: 1.5rem;
+      }
+
+      label {
+        font-size: 1.5rem;
+      }
+    }
+
+    button {
+      padding: 5px 10px;
+      font-size: 1.5rem;
+      transition: all 0.5s linear;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.main-ver {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 80%;
+  padding: 20px;
+  margin: 20px auto;
+}
+.main-ver p {
+  font-size: 1.5rem;
+}
+.main-ver #btnActualizar {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 1.5rem;
+  transition: all 0.5s linear;
+}
+.main-ver form {
+  display: flex;
+  width: 40%;
+  margin: 20px auto;
+}
+.main-ver form input {
+  padding: 5px 10px;
+  font-size: 1.5rem;
+}
+.main-ver form input:focus {
+  box-shadow: none;
+}
+.main-ver form button {
+  padding: 5px 10px;
+  font-size: 1.5rem;
+}
+.main-ver table {
+  width: 80%;
+  margin: 0 auto;
+}
+.main-ver table thead tr th {
+  font-size: 1.5rem;
+  border: 1px solid #aaa;
+}
+.main-ver table tbody tr td {
+  font-size: 1.5rem;
+}
+
+/*# sourceMappingURL=ver.css.map */
