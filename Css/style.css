@@ -28,6 +28,28 @@
   height: 50px;
 }
 
+.main-inicio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  height: 20vh;
+  padding: 20px;
+  margin: 20px auto;
+}
+.main-inicio button {
+  padding: 10px;
+  font-size: 1.5rem;
+  transition: all 0.5s linear;
+}
+.main-inicio button i {
+  margin-left: 10px;
+}
+.main-inicio button:hover {
+  transform: scale(1.1);
+}
+
 #footer {
   display: flex;
   justify-content: center;
@@ -102,6 +124,15 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.main-agregar,
+.main-ver {
+  display: none;
+  height: 100vh;
+  background-color: #ff0099;
+  margin: 10px;
+  padding: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,25 @@
+@import 'variables';
+@import 'mixin';
+
+.main-inicio {
+  @include display();
+  text-align: center;
+  width: 80%;
+  height: 20vh;
+  padding: 20px;
+  margin: 20px auto;
+
+  button {
+    padding: 10px;
+    font-size: 1.5rem;
+    transition: all 0.5s linear;
+
+    i {
+      margin-left: 10px;
+    }
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+}
