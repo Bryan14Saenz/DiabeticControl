@@ -1,0 +1,30 @@
+.main-opciones {
+  height: 100vh;
+}
+.main-opciones .opciones-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 0px #8cbfe6;
+}
+.main-opciones .opciones-header button {
+  font-size: 1.5rem;
+  border: none;
+  background-color: transparent;
+}
+.main-opciones .opciones-header #divOpcionesImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-opciones .opciones-header #divOpcionesImg img {
+  width: 50px;
+  height: 50px;
+}
+.main-opciones .opciones-header #divOpcionesImg p {
+  font-size: 1.5rem;
+}
+
+/*# sourceMappingURL=opciones.css.map */

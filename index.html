@@ -68,7 +68,7 @@
       </section>
 
       <!-- Agregar Paciente -->
-      <section class="main-agregar" style="display: none;">
+      <section class="main-agregar" style="display: none">
         <p>Agrega un nuevo paciente con los siguientes datos.</p>
         <form id="formAgregar">
           <div class="mb-3">
@@ -130,7 +130,7 @@
       </section>
 
       <!-- Ver Pacientes -->
-      <section class="main-ver" style="display: none;">
+      <section class="main-ver" style="display: none">
         <p>Selecciona un pacientes.</p>
         <button
           type="button"
@@ -163,6 +163,20 @@
           </thead>
           <tbody id="tbody"></tbody>
         </table>
+      </section>
+
+      <!-- Opciones -->
+      <section class="main-opciones" style="display: none">
+        <header class="opciones-header">
+          <button class="bi bi-person-fill" onclick="verOpciones()" aria-label="Ver Opciones">
+            <span id="spanOpcionesNombre"></span>
+            <span id="spanOpcionesApellido"></span>
+          </button>
+          <div id="divOpcionesImg">
+            <img src="Assets/Svg/logo.svg" alt="logo Diabetic Control" />
+            <p>Diabetic Control</p>
+          </div>
+        </header>
       </section>
     </main>
 
