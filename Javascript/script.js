@@ -7,11 +7,12 @@ const spanOpcionesId = document.createElement('span');
 
 const btnAgregar = document.getElementById('btnAgregar');
 const btnVer = document.getElementById('btnVer');
-const btnActualizar = document.getElementById('btnActualizar');
 const btnBuscar = document.getElementById('btnBuscar');
 const btnSeleccion = document.getElementsByClassName('btnSeleccion');
 
 const header = document.querySelector('#header');
+const headerUsuario = document.querySelector('.usuario');
+const headerNavBar = document.querySelector('.navbar');
 const mainInicio = document.querySelector('.main-inicio');
 const mainAgregar = document.querySelector('.main-agregar');
 const mainVer = document.querySelector('.main-ver');
@@ -46,6 +47,20 @@ IDBRequest.addEventListener('error', (e) => {
 });
 
 // Funciones
+const inicioDeCarga = () => {
+  const divCarga = document.createElement('div');
+  divCarga.classList.add('cargando');
+  divCarga.innerHTML = `
+  <div class="loading"></div>
+  <p>Entrando a Diabetic Control...</p>`;
+
+  document.body.appendChild(divCarga);
+
+  setTimeout(() => {
+    divCarga.remove();
+  }, 3000);
+};
+
 const addPaciente = (paciente) => {
   if (!db) {
     console.error('No se ha abierto la base de datos');
@@ -66,7 +81,7 @@ const addPaciente = (paciente) => {
   });
 };
 
-const cargarPacientes = () => {
+const obtenerLlamada = () => {
   if (!db) {
     console.error('No se ha abierto la base de datos');
     return;
@@ -77,8 +92,13 @@ const cargarPacientes = () => {
 
   const request = store.getAll();
 
-  request.addEventListener('success', (e) => {
+  return request;
+};
+
+const cargarPacientes = () => {
+  obtenerLlamada().addEventListener('success', (e) => {
     const pacientes = e.target.result;
+
     tableBody.innerHTML = '';
 
     if (pacientes.length === 0) {
@@ -88,7 +108,7 @@ const cargarPacientes = () => {
         const row = document.createElement('tr');
 
         row.innerHTML = `
-          <th scope="row">${paciente.id}</th>
+          <td scope="row">${paciente.id}</td>
           <td>${paciente.nombre}</td>
           <td>${paciente.apellido}</td>
           <td>${paciente.tel}</td>
@@ -96,7 +116,7 @@ const cargarPacientes = () => {
           <td>
             <button 
             type="button" 
-            class="btn btn-outline-primary"
+            class="btn btnSeleccion"
             data-id="${paciente.id}"
             data-nombre="${paciente.nombre}"
             data-apellido="${paciente.apellido}"
@@ -122,30 +142,21 @@ const cargarPacientes = () => {
 };
 
 function buscarPaciente(nombre) {
-  if (!db) {
-    console.error('No se ha abierto la base de datos');
-    return;
-  }
-
-  const transaction = db.transaction('Pacientes', 'readonly');
-  const store = transaction.objectStore('Pacientes');
-
-  const request = store.getAll();
-
-  request.addEventListener('success', (e) => {
-    e.target.result.sort((a, b) => a.name.localeCompare(b.name));
-
+  obtenerLlamada().addEventListener('success', (e) => {
     const pacientes = e.target.result;
+
+    pacientes.sort((a, b) => a.nombre.localeCompare(b.nombre));
+
     tableBody.innerHTML = '';
 
     if (pacientes.length === 0) {
       tableBody.innerHTML = '<tr><td colspan="6">No hay pacientes</td></tr>';
     } else {
       pacientes.forEach((paciente) => {
-        if (paciente.name.toLowerCase().includes(nombre.toLowerCase())) {
+        if (paciente.nombre.toLowerCase().includes(nombre.toLowerCase())) {
           const row = document.createElement('tr');
           row.innerHTML = `
-          <th scope="row">${paciente.id}</th>
+          <td scope="row">${paciente.id}</td>
           <td>${paciente.nombre}</td>
           <td>${paciente.apellido}</td>
           <td>${paciente.tel}</td>
@@ -153,7 +164,7 @@ function buscarPaciente(nombre) {
           <td>
             <button 
             type="button" 
-            class="btn btn-outline-primary"
+            class="btn btnSeleccion"
             data-id="${paciente.id}"
             data-nombre="${paciente.nombre}"
             data-apellido="${paciente.apellido}"
@@ -180,10 +191,11 @@ function buscarPaciente(nombre) {
 }
 
 function seleccionarPaciente(nombre, apellido, tel, edad, id) {
-  header.style.display = 'none';
   mainInicio.style.display = 'none';
   mainVer.style.display = 'none';
-  mainOpciones.style.display = 'block';
+  headerNavBar.style.display = 'none';
+  headerUsuario.style.display = 'flex';
+  mainOpciones.style.display = 'grid';
 
   spanOpcionesNombre.textContent = nombre;
   spanOpcionesApellido.textContent = apellido;
@@ -202,7 +214,7 @@ function verOpciones() {
       <p>Teléfono: ${spanOpcionesTel.textContent}</p>
       <p>Fecha de Nacimiento: ${spanOpcionesEdad.textContent}</p>
       <p>ID: ${spanOpcionesId.textContent}</p>
-      <button type="button" class="btn btn-outline-danger" onclick="cerrarSesión()">Cerrar Sesión</button>
+      <button type="button" class="btn cerrarSesión" onclick="cerrarSesión()">Cerrar Sesión</button>
     </div>
   `;
 
@@ -219,16 +231,17 @@ function cerrarSesión() {
 
   modal.remove();
 
-  header.style.display = 'flex';
-  mainInicio.style.display = 'flex';
-  mainVer.style.display = 'none';
+  headerUsuario.style.display = 'none';
   mainOpciones.style.display = 'none';
+  headerNavBar.style.display = 'flex';
+  mainInicio.style.display = 'flex';
   footer.style.display = 'flex';
 }
 
 // Eventos
 window.addEventListener('load', () => {
   cargarPacientes();
+  inicioDeCarga();
 });
 
 btnAgregar.addEventListener('click', () => {
@@ -251,10 +264,6 @@ btnVer.addEventListener('click', () => {
     mainVer.style.display = 'none';
     footer.style.display = 'flex';
   }
-});
-
-btnActualizar.addEventListener('click', () => {
-  cargarPacientes();
 });
 
 datoForm.addEventListener('submit', (e) => {

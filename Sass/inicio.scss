@@ -4,15 +4,14 @@
 .main-inicio {
   @include display();
   text-align: center;
-  width: 80%;
-  height: 20vh;
-  padding: 20px;
-  margin: 20px auto;
+  width: 70%;
+  padding: 10px;
+  margin: 10px auto;
 
   button {
+    transition: all 0.5s linear;
     padding: 10px;
     font-size: 1.5rem;
-    transition: all 0.5s linear;
 
     i {
       margin-left: 10px;
@@ -21,5 +20,25 @@
 
   button:hover {
     transform: scale(1.1);
+  }
+
+  #btnAgregar {
+    color: $colorPrimero;
+    border: 1px solid $colorPrimero;
+
+    &:hover {
+      background-color: $colorPrimero;
+      color: #fff;
+    }
+  }
+
+  #btnVer {
+    color: $colorTercero;
+    border: 1px solid $colorTercero;
+
+    &:hover {
+      background-color: $colorTercero;
+      color: #fff;
+    }
   }
 }

@@ -4,27 +4,21 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  width: 80%;
-  padding: 20px;
-  margin: 20px auto;
+  padding: 10px;
+  margin: 10px auto;
 }
 .main-ver p {
-  font-size: 1.5rem;
-}
-.main-ver #btnActualizar {
-  margin-bottom: 20px;
-  padding: 10px;
-  font-size: 1.5rem;
-  transition: all 0.5s linear;
+  font-size: 1.8rem;
 }
 .main-ver form {
   display: flex;
-  width: 40%;
-  margin: 20px auto;
+  width: 20%;
+  margin: 10px auto;
 }
 .main-ver form input {
   padding: 5px 10px;
   font-size: 1.5rem;
+  border: 1px solid #3e1c33;
 }
 .main-ver form input:focus {
   box-shadow: none;
@@ -32,6 +26,14 @@
 .main-ver form button {
   padding: 5px 10px;
   font-size: 1.5rem;
+  border: 1px solid #3e1c33;
+  background-color: #3e1c33;
+  color: #fff;
+}
+.main-ver form button:hover {
+  background-color: transparent;
+  border: 1px solid #3e1c33;
+  color: #3e1c33;
 }
 .main-ver table {
   width: 80%;
@@ -39,10 +41,12 @@
 }
 .main-ver table thead tr th {
   font-size: 1.5rem;
-  border: 1px solid #aaa;
+  background-color: #3e1c33;
+  color: #fff;
 }
 .main-ver table tbody tr td {
   font-size: 1.5rem;
+  border-bottom: 1px solid #3e1c33;
 }
 
 /*# sourceMappingURL=ver.css.map */

@@ -5,38 +5,47 @@
   @include display();
   flex-direction: column;
   text-align: center;
-  margin-top: 20px;
-  padding: 20px;
-  gap: 20px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  margin-top: 10px;
+  padding: 10px;
+  gap: 10px;
   background-color: $colorPrimero;
 
   .footer-mailto {
     @include display();
-    flex-direction: column;
-    padding: 20px;
-    margin: 20px auto;
-    gap: 20px;
-    border-radius: 20px;
-    background-color: $colorTercero;
+    padding: 20px 10px;
+    margin: 10px auto;
+    gap: 10px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: $colorSegundo;
     box-shadow: 0px 0px 10px 0px $colorSegundo;
 
+    h2{
+      width: 30%;
+    }
+
     p {
-      width: 80%;
+      width: 40%;
       font-size: 1.5rem;
+      margin: 10px;
     }
 
     a {
       text-decoration: none;
-      font-size: 1.5rem;
-      padding: 10px 20px;
       transition: all 0.5s linear;
+      width: 30%;
+      font-size: 1.5rem;
+      padding: 5px 10px;
       border-radius: 50px;
-      border: 1px solid #000;
-      color: #000;
+      border: 1px solid #fff;
+      color: #fff;
 
       &:hover {
-        background-color: #000;
-        color: $colorTercero;
+        background-color: #fff;
+        color: $colorSegundo;
       }
     }
   }
@@ -44,25 +53,25 @@
   .footer-info {
     p {
       font-size: 1.5rem;
-      color: #000;
+      color: #fff;
     }
 
     p:nth-child(1) {
-      font-size: 1.8rem;
       text-decoration: underline;
+      font-size: 1.8rem;
     }
 
     ul {
       @include display();
       list-style: none;
-      gap: 20px;
-      margin: 20px;
+      gap: 10px;
+      margin: 10px;
 
       li {
         a {
           transition: all 0.5s linear;
           font-size: 1.5rem;
-          color: #000;
+          color: #fff;
 
           &:hover {
             color: $colorTercero;

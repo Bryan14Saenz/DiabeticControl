@@ -1,32 +1,85 @@
-@import 'variables';
-@import 'mixin';
-
 .main-opciones {
-  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 70%;
+  height: 70vh;
+  margin: 50px auto;
+  padding: 10px;
+  gap: 20px;
+  color: #fff;
 
-  .opciones-header {
-    @include display();
-    justify-content: space-between;
-    padding: 20px;
-    box-shadow: 0px 0px 10px 0px $colorSegundo;
+  div {
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s linear;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px $colorPrimero;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:hover p {
+      display: block;
+    }
+
+    p {
+      display: none;
+      text-align: center;
+      width: 80%;
+      font-size: 1.5rem;
+      border-radius: 10px;
+      margin: 10px auto;
+      padding: 5px;
+      color: #000;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px 0px $colorPrimero;
+    }
 
     button {
+      position: absolute;
+      width: 100%;
+      height: 40px;
+      bottom: 0;
       font-size: 1.5rem;
-      border: none;
-      background-color: transparent;
-    }
+      border-radius: 10px;
+      background-color: $colorPrimero;
+      color: #fff;
 
-    #divOpcionesImg {
-      @include display();
-
-      img {
-        width: 50px;
-        height: 50px;
-      }
-
-      p {
-        font-size: 1.5rem;
+      &:hover {
+        background-color: $colorTercero;
       }
     }
+  }
+
+  .síntomas {
+    background-image: url(../Assets/Img/sintomas.png);
+    background-size: cover;
+  }
+
+  .pruebas {
+    background-image: url(../Assets/Img/pruebas.png);
+    background-size: cover;
+  }
+
+  .registros {
+    background-image: url(../Assets/Img/registro.png);
+    background-size: cover;
+  }
+
+  .diagnostico {
+    background-image: url(../Assets/Img/diagnostico.png);
+    background-size: cover;
+  }
+
+  .citas {
+    background-image: url(../Assets/Img/citas.png);
+    background-size: cover;
+  }
+
+  .educación {
+    background-image: url(../Assets/Img/educación.png);
+    background-size: cover;
   }
 }

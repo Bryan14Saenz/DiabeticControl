@@ -5,29 +5,22 @@
   @include display();
   flex-direction: column;
   text-align: center;
-  width: 80%;
-  padding: 20px;
-  margin: 20px auto;
+  padding: 10px;
+  margin: 10px auto;
 
   p {
-    font-size: 1.5rem;
-  }
-
-  #btnActualizar {
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 1.5rem;
-    transition: all 0.5s linear;
+    font-size: 1.8rem;
   }
 
   form {
     display: flex;
-    width: 40%;
-    margin: 20px auto;
+    width: 20%;
+    margin: 10px auto;
 
     input {
       padding: 5px 10px;
       font-size: 1.5rem;
+      border: 1px solid $colorSegundo;
 
       &:focus {
         box-shadow: none;
@@ -37,6 +30,15 @@
     button {
       padding: 5px 10px;
       font-size: 1.5rem;
+      border: 1px solid $colorSegundo;
+      background-color: $colorSegundo;
+      color: #fff;
+
+      &:hover {
+        background-color: transparent;
+        border: 1px solid $colorSegundo;
+        color: $colorSegundo;
+      }
     }
   }
 
@@ -48,7 +50,8 @@
       tr {
         th {
           font-size: 1.5rem;
-          border: 1px solid #aaa;
+          background-color: $colorSegundo;
+          color: #fff;
         }
       }
     }
@@ -57,6 +60,7 @@
       tr {
         td {
           font-size: 1.5rem;
+          border-bottom: 1px solid $colorSegundo;
         }
       }
     }

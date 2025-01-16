@@ -3,21 +3,36 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 80%;
-  height: 20vh;
-  padding: 20px;
-  margin: 20px auto;
+  width: 70%;
+  padding: 10px;
+  margin: 10px auto;
 }
 .main-inicio button {
+  transition: all 0.5s linear;
   padding: 10px;
   font-size: 1.5rem;
-  transition: all 0.5s linear;
 }
 .main-inicio button i {
   margin-left: 10px;
 }
 .main-inicio button:hover {
   transform: scale(1.1);
+}
+.main-inicio #btnAgregar {
+  color: #130912;
+  border: 1px solid #130912;
+}
+.main-inicio #btnAgregar:hover {
+  background-color: #130912;
+  color: #fff;
+}
+.main-inicio #btnVer {
+  color: #602749;
+  border: 1px solid #602749;
+}
+.main-inicio #btnVer:hover {
+  background-color: #602749;
+  color: #fff;
 }
 
 /*# sourceMappingURL=inicio.css.map */

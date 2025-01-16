@@ -3,30 +3,49 @@
 
 #header {
   @include display();
-  padding: 5px;
+  justify-content: space-between;
+  box-shadow: 0px 0px 10px 0px $colorPrimero;
+
+  .usuario {
+    @include display();
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+
+    button {
+      font-size: 1.5rem;
+      border: none;
+      background-color: transparent;
+    }
+
+    #divOpcionesImg {
+      @include display();
+
+      img {
+        width: 40px;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
 
   .navbar {
-    padding: 5px;
-    border-radius: 20px;
-    background-color: $colorTercero;
-    box-shadow: 0px 0px 10px 0px $colorSegundo;
+    padding: 10px;
+    margin: 10px;
 
     .container-fluid {
-      border-radius: 20px;
-      background-color: $colorCuarto;
-      box-shadow: 0px 0px 10px 0px $colorQuinto;
-
       .navbar-brand {
-        padding: 5px;
-        margin: 20px auto;
-        border-radius: 20px;
-        border: 1px solid #aaa;
-        background-color: $colorCuarto;
-        box-shadow: 0px 0px 10px 0px $colorQuinto;
-
         img {
-          width: 50px;
-          height: 50px;
+          width: 40px;
+        }
+
+        span {
+          font-size: 1.5rem;
+          margin-left: 10px;
+          text-decoration: underline;
         }
       }
     }

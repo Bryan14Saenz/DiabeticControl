@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../sass/opciones.scss","../sass/mixin.scss"],"names":[],"mappings":"AAGA;EACE;;AAEA;ECLA;EACA;EACA;EDKE;EACA;EACA;;AAEA;EACE;EACA;EACA;;AAGF;ECjBF;EACA;EACA;;ADkBI;EACE;EACA;;AAGF;EACE","file":"opciones.css"}
+{"version":3,"sourceRoot":"","sources":["../sass/opciones.scss"],"names":[],"mappings":";AAAA;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE","file":"opciones.css"}

@@ -2,30 +2,45 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  justify-content: space-between;
+  box-shadow: 0px 0px 10px 0px #130912;
+}
+#header .usuario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+}
+#header .usuario button {
+  font-size: 1.5rem;
+  border: none;
+  background-color: transparent;
+}
+#header .usuario #divOpcionesImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header .usuario #divOpcionesImg img {
+  width: 40px;
+}
+#header .usuario #divOpcionesImg p {
+  font-size: 1.5rem;
 }
 #header .navbar {
-  padding: 5px;
-  border-radius: 20px;
-  background-color: #b380cc;
-  box-shadow: 0px 0px 10px 0px #8cbfe6;
-}
-#header .navbar .container-fluid {
-  border-radius: 20px;
-  background-color: #d940b3;
-  box-shadow: 0px 0px 10px 0px #ff0099;
-}
-#header .navbar .container-fluid .navbar-brand {
-  padding: 5px;
-  margin: 20px auto;
-  border-radius: 20px;
-  border: 1px solid #aaa;
-  background-color: #d940b3;
-  box-shadow: 0px 0px 10px 0px #ff0099;
+  padding: 10px;
+  margin: 10px;
 }
 #header .navbar .container-fluid .navbar-brand img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+}
+#header .navbar .container-fluid .navbar-brand span {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=header.css.map */
