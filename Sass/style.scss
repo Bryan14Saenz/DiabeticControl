@@ -25,6 +25,21 @@ body {
   display: none;
 }
 
+.btn {
+  cursor: pointer;
+  transition: all 0.5s linear;
+  padding: 5px 10px;
+  font-size: 1.5rem;
+  border: 1px solid $colorPrimero;
+  color: #000;
+  background-color: transparent;
+
+  &:hover {
+    color: #fff;
+    background-color: $colorPrimero;
+  }
+}
+
 .btnSeleccion {
   cursor: pointer;
   transition: all 0.5s linear;

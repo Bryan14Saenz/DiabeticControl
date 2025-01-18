@@ -17,6 +17,7 @@ const mainInicio = document.querySelector('.main-inicio');
 const mainAgregar = document.querySelector('.main-agregar');
 const mainVer = document.querySelector('.main-ver');
 const mainOpciones = document.querySelector('.main-opciones');
+const mainFuncionalidades = document.querySelector('.main-funcionalidades');
 const footer = document.querySelector('#footer');
 
 const modal = document.createElement('div');
@@ -292,3 +293,4 @@ btnBuscar.addEventListener('click', (e) => {
   const nombre = inputBuscar.value;
   buscarPaciente(nombre);
 });
+

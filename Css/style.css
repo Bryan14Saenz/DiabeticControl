@@ -197,21 +197,21 @@
 
 .main-opciones {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   width: 70%;
   height: 70vh;
   margin: 50px auto;
   padding: 10px;
-  gap: 20px;
-  color: #fff;
+  gap: 10px;
 }
 .main-opciones div {
   cursor: pointer;
   position: relative;
   transition: all 0.5s linear;
+  width: 80%;
   height: 200px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px 0px #130912;
+  box-shadow: 0px 0px 10px 0px #602749;
 }
 .main-opciones div:hover {
   transform: scale(1.1);
@@ -227,9 +227,8 @@
   border-radius: 10px;
   margin: 10px auto;
   padding: 5px;
-  color: #000;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px 0px #130912;
+  color: #fff;
+  background-color: #602749;
 }
 .main-opciones div button {
   position: absolute;
@@ -238,11 +237,13 @@
   bottom: 0;
   font-size: 1.5rem;
   border-radius: 10px;
-  background-color: #130912;
+  border: none;
   color: #fff;
+  background-color: #3e1c33;
 }
 .main-opciones div button:hover {
-  background-color: #602749;
+  color: #fff;
+  background-color: #130912;
 }
 .main-opciones .síntomas {
   background-image: url(../Assets/Img/sintomas.png);
@@ -357,6 +358,20 @@ body {
 .main-agregar,
 .main-ver {
   display: none;
+}
+
+.btn {
+  cursor: pointer;
+  transition: all 0.5s linear;
+  padding: 5px 10px;
+  font-size: 1.5rem;
+  border: 1px solid #130912;
+  color: #000;
+  background-color: transparent;
+}
+.btn:hover {
+  color: #fff;
+  background-color: #130912;
 }
 
 .btnSeleccion {

@@ -1,6 +1,6 @@
 /* Error: Undefined variable.
  *    ,
- * 17 |     box-shadow: 0px 0px 10px 0px $colorPrimero;
+ * 17 |     box-shadow: 0px 0px 10px 0px $colorTercero;
  *    |                                  ^^^^^^^^^^^^^
  *    '
  *   sass\opciones.scss 17:34  root stylesheet */
@@ -13,5 +13,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 17 \2502      box-shadow: 0px 0px 10px 0px $colorPrimero;\d\a    \2502                                   ^^^^^^^^^^^^^\a    \2575 \a   sass\\opciones.scss 17:34  root stylesheet";
+  content: "Error: Undefined variable.\a    \2577 \a 17 \2502      box-shadow: 0px 0px 10px 0px $colorTercero;\d\a    \2502                                   ^^^^^^^^^^^^^\a    \2575 \a   sass\\opciones.scss 17:34  root stylesheet";
 }
