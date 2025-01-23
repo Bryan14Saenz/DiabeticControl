@@ -25,18 +25,19 @@
   box-shadow: 0px 0px 10px 0px #3e1c33;
 }
 #footer .footer-mailto h2 {
+  font-size: 1.5rem;
   width: 30%;
 }
 #footer .footer-mailto p {
   width: 40%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 10px;
 }
 #footer .footer-mailto a {
   text-decoration: none;
   transition: all 0.5s linear;
   width: 30%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 5px 10px;
   border-radius: 50px;
   border: 1px solid #fff;
@@ -47,24 +48,24 @@
   color: #3e1c33;
 }
 #footer .footer-info p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #fff;
 }
 #footer .footer-info p:nth-child(1) {
   text-decoration: underline;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 #footer .footer-info ul {
   display: flex;
   justify-content: center;
   align-items: center;
   list-style: none;
-  gap: 10px;
-  margin: 10px;
+  gap: 8px;
+  margin: 8px;
 }
 #footer .footer-info ul li a {
   transition: all 0.5s linear;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #fff;
 }
 #footer .footer-info ul li a:hover {
