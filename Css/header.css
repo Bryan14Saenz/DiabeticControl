@@ -15,7 +15,7 @@
   margin: 10px;
 }
 #header .usuario button {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border: none;
   background-color: transparent;
 }
@@ -28,19 +28,23 @@
   width: 40px;
 }
 #header .usuario #divOpcionesImg p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 #header .navbar {
   padding: 10px;
   margin: 10px;
 }
+#header .navbar .container-fluid .navbar-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #header .navbar .container-fluid .navbar-brand img {
   width: 40px;
 }
 #header .navbar .container-fluid .navbar-brand span {
-  font-size: 1.5rem;
-  margin-left: 10px;
-  text-decoration: underline;
+  font-size: 1.2rem;
+  margin-left: 8px;
 }
 
 /*# sourceMappingURL=header.css.map */

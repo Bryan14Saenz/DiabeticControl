@@ -14,7 +14,7 @@
     margin: 10px;
 
     button {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       border: none;
       background-color: transparent;
     }
@@ -27,7 +27,7 @@
       }
 
       p {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
       }
     }
   }
@@ -38,14 +38,14 @@
 
     .container-fluid {
       .navbar-brand {
+        @include display();
         img {
           width: 40px;
         }
 
         span {
-          font-size: 1.5rem;
-          margin-left: 10px;
-          text-decoration: underline;
+          font-size: 1.2rem;
+          margin-left: 8px;
         }
       }
     }

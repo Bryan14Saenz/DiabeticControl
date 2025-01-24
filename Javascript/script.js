@@ -1,10 +1,4 @@
 // constantes
-const spanOpcionesNombre = document.getElementById('spanOpcionesNombre');
-const spanOpcionesApellido = document.getElementById('spanOpcionesApellido');
-const spanOpcionesTel = document.createElement('span');
-const spanOpcionesEdad = document.createElement('span');
-const spanOpcionesId = document.createElement('span');
-
 const btnAgregar = document.getElementById('btnAgregar');
 const btnVer = document.getElementById('btnVer');
 const btnBuscar = document.getElementById('btnBuscar');
@@ -25,16 +19,16 @@ const modal = document.createElement('div');
 const datoForm = document.getElementById('formAgregar');
 const tableBody = document.getElementById('tbody');
 
-const IDBRequest = indexedDB.open('Pacientes', 1);
+const IDBRequest = indexedDB.open('Clientes', 1);
 let db;
 
 // Petitions
 IDBRequest.addEventListener('upgradeneeded', (e) => {
   const db = e.target.result;
 
-  if (!db.objectStoreNames.contains('Pacientes')) {
-    db.createObjectStore('Pacientes', { autoIncrement: true });
-    console.log('Object store "Pacientes" creada.');
+  if (!db.objectStoreNames.contains('clientes')) {
+    db.createObjectStore('clientes', { autoIncrement: true });
+    console.log('Object store "Clientes" creada.');
   }
 });
 
@@ -53,7 +47,7 @@ const inicioDeCarga = () => {
   divCarga.classList.add('cargando');
   divCarga.innerHTML = `
   <div class="loading"></div>
-  <p>Entrando a Diabetic Control...</p>`;
+  <p>Abriendo la base de datos...</p>`;
 
   document.body.appendChild(divCarga);
 
@@ -62,23 +56,23 @@ const inicioDeCarga = () => {
   }, 3000);
 };
 
-const addPaciente = (paciente) => {
+const addCliente = (clientes) => {
   if (!db) {
     console.error('No se ha abierto la base de datos');
     return;
   }
 
-  const transaction = db.transaction('Pacientes', 'readwrite');
-  const store = transaction.objectStore('Pacientes');
+  const transaction = db.transaction('clientes', 'readwrite');
+  const store = transaction.objectStore('clientes');
 
-  const request = store.add(paciente);
+  const request = store.add(clientes);
 
   request.addEventListener('success', (e) => {
-    alert('Paciente agregado');
+    alert('cliente agregado');
   });
 
   request.addEventListener('error', (e) => {
-    console.error('Error al agregar el paciente', e.target.error);
+    console.error('Error al agregar el cliente', e.target.error);
   });
 };
 
@@ -88,46 +82,47 @@ const obtenerLlamada = () => {
     return;
   }
 
-  const transaction = db.transaction('Pacientes', 'readonly');
-  const store = transaction.objectStore('Pacientes');
+  const transaction = db.transaction('clientes', 'readonly');
+  const store = transaction.objectStore('clientes');
 
   const request = store.getAll();
 
   return request;
 };
 
-const cargarPacientes = () => {
+const cargarClientes = () => {
   obtenerLlamada().addEventListener('success', (e) => {
-    const pacientes = e.target.result;
+    const clientes = e.target.result;
 
     tableBody.innerHTML = '';
 
-    if (pacientes.length === 0) {
-      tableBody.innerHTML = '<tr><td colspan="6">No hay pacientes</td></tr>';
+    if (clientes.length === 0) {
+      tableBody.innerHTML =
+        '<tr><td colspan="6">No hay clientes disponibles</td></tr>';
     } else {
-      pacientes.forEach((paciente) => {
+      clientes.forEach((clientes) => {
         const row = document.createElement('tr');
 
         row.innerHTML = `
-          <td scope="row">${paciente.id}</td>
-          <td>${paciente.nombre}</td>
-          <td>${paciente.apellido}</td>
-          <td>${paciente.tel}</td>
-          <td>${paciente.edad}</td>
+          <td scope="row">${clientes.id}</td>
+          <td>${clientes.nombre}</td>
+          <td>${clientes.apellido}</td>
+          <td>${clientes.tel}</td>
+          <td>${clientes.dirección}</td>
           <td>
             <button 
             type="button" 
             class="btn btnSeleccion"
-            data-id="${paciente.id}"
-            data-nombre="${paciente.nombre}"
-            data-apellido="${paciente.apellido}"
-            data-tel="${paciente.tel}"
-            data-edad="${paciente.edad}"
-            onclick="seleccionarPaciente(
+            data-id="${clientes.id}"
+            data-nombre="${clientes.nombre}"
+            data-apellido="${clientes.apellido}"
+            data-tel="${clientes.tel}"
+            data-edad="${clientes.dirección}"
+            onclick="seleccionarCliente(
               this.dataset.nombre,
               this.dataset.apellido,
               this.dataset.tel,
-              this.dataset.edad,
+              this.dataset.dirección,
               this.dataset.id
             )"
             >
@@ -142,40 +137,41 @@ const cargarPacientes = () => {
   });
 };
 
-function buscarPaciente(nombre) {
+function buscarCliente(nombre) {
   obtenerLlamada().addEventListener('success', (e) => {
-    const pacientes = e.target.result;
+    const clientes = e.target.result;
 
-    pacientes.sort((a, b) => a.nombre.localeCompare(b.nombre));
+    clientes.sort((a, b) => a.nombre.localeCompare(b.nombre));
 
     tableBody.innerHTML = '';
 
-    if (pacientes.length === 0) {
-      tableBody.innerHTML = '<tr><td colspan="6">No hay pacientes</td></tr>';
+    if (clientes.length === 0) {
+      tableBody.innerHTML =
+        '<tr><td colspan="6">No hay clientes disponibles</td></tr>';
     } else {
-      pacientes.forEach((paciente) => {
-        if (paciente.nombre.toLowerCase().includes(nombre.toLowerCase())) {
+      clientes.forEach((clientes) => {
+        if (clientes.nombre.toLowerCase().includes(clientes.toLowerCase())) {
           const row = document.createElement('tr');
           row.innerHTML = `
-          <td scope="row">${paciente.id}</td>
-          <td>${paciente.nombre}</td>
-          <td>${paciente.apellido}</td>
-          <td>${paciente.tel}</td>
-          <td>${paciente.edad}</td>
+          <td scope="row">${clientes.id}</td>
+          <td>${clientes.nombre}</td>
+          <td>${clientes.apellido}</td>
+          <td>${clientes.tel}</td>
+          <td>${clientes.dirección}</td>
           <td>
             <button 
             type="button" 
             class="btn btnSeleccion"
-            data-id="${paciente.id}"
-            data-nombre="${paciente.nombre}"
-            data-apellido="${paciente.apellido}"
-            data-tel="${paciente.tel}"
-            data-edad="${paciente.edad}"
-            onclick="seleccionarPaciente(
+            data-id="${clientes.id}"
+            data-nombre="${clientes.nombre}"
+            data-apellido="${clientes.apellido}"
+            data-tel="${clientes.tel}"
+            data-dirección="${clientes.dirección}"
+            onclick="seleccionarCliente(
               this.dataset.nombre,
               this.dataset.apellido,
               this.dataset.tel,
-              this.dataset.edad,
+              this.dataset.dirección,
               this.dataset.id
             )"
             >
@@ -191,57 +187,13 @@ function buscarPaciente(nombre) {
   });
 }
 
-function seleccionarPaciente(nombre, apellido, tel, edad, id) {
-  mainInicio.style.display = 'none';
-  mainVer.style.display = 'none';
-  headerNavBar.style.display = 'none';
-  headerUsuario.style.display = 'flex';
-  mainOpciones.style.display = 'grid';
-
-  spanOpcionesNombre.textContent = nombre;
-  spanOpcionesApellido.textContent = apellido;
-  spanOpcionesTel.textContent = tel;
-  spanOpcionesEdad.textContent = edad;
-  spanOpcionesId.textContent = id;
-}
-
-function verOpciones() {
-  modal.classList.add('modal-content');
-  modal.innerHTML = `
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p>Nombre: ${spanOpcionesNombre.textContent}</p>
-      <p>Apellido: ${spanOpcionesApellido.textContent}</p>
-      <p>Teléfono: ${spanOpcionesTel.textContent}</p>
-      <p>Fecha de Nacimiento: ${spanOpcionesEdad.textContent}</p>
-      <p>ID: ${spanOpcionesId.textContent}</p>
-      <button type="button" class="btn cerrarSesión" onclick="cerrarSesión()">Cerrar Sesión</button>
-    </div>
-  `;
-
-  modal.querySelector('.close').addEventListener('click', () => {
-    modal.remove();
-  });
-
-  document.body.appendChild(modal);
-}
-
-function cerrarSesión() {
-  spanOpcionesNombre.textContent = '';
-  spanOpcionesApellido.textContent = '';
-
-  modal.remove();
-
-  headerUsuario.style.display = 'none';
-  mainOpciones.style.display = 'none';
-  headerNavBar.style.display = 'flex';
-  mainInicio.style.display = 'flex';
-  footer.style.display = 'flex';
+function seleccionarCliente(nombre, apellido, tel, dirección, id) {
+  alert('Funcionalidad no disponible');
 }
 
 // Eventos
 window.addEventListener('load', () => {
-  cargarPacientes();
+  cargarClientes();
   inicioDeCarga();
 });
 
@@ -270,20 +222,20 @@ btnVer.addEventListener('click', () => {
 datoForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const paciente = {
+  const cliente = {
     nombre: e.target[0].value,
     apellido: e.target[1].value,
-    edad: e.target[2].value,
+    dirección: e.target[2].value,
     tel: e.target[3].value,
     id: e.target[4].value,
   };
 
-  addPaciente(paciente);
+  addCliente(cliente);
 
   e.target.reset();
 
   setTimeout(() => {
-    cargarPacientes();
+    cargarClientes();
   }, 500);
 });
 
@@ -291,6 +243,5 @@ btnBuscar.addEventListener('click', (e) => {
   e.preventDefault();
 
   const nombre = inputBuscar.value;
-  buscarPaciente(nombre);
+  buscarCliente(nombre);
 });
-

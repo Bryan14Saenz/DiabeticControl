@@ -9,7 +9,7 @@
   margin: 10px auto;
 
   p {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
   }
 
@@ -22,22 +22,28 @@
 
     div {
       @include display();
-      margin: 10px auto;
+      margin: 5px;
 
       input {
-        width: 50%;
-        padding: 0px 5px;
-        font-size: 1.5rem;
+        width: 60%;
+        padding: 3px 8px;
+        font-size: 1.2rem;
+        border: 1px solid $colorSegundo;
+        color: $colorSegundo;
+        background-color: transparent;
+        box-shadow: 0px 0px 10px 0px $colorSegundo;
 
         &:focus {
           outline: none;
           box-shadow: none;
-          border-color: $colorSegundo;
+          border: 1px solid $colorSegundo;
+          color: #fff;
+          background-color: $colorSegundo;
         }
 
         &::placeholder {
-          font-size: 1.5rem;
-          color: #aaa;
+          font-size: 1.2rem;
+          color: $colorSegundo;
         }
 
         &:focus::placeholder {
@@ -46,25 +52,30 @@
       }
 
       label {
-        width: 30%;
+        width: 20%;
         padding: 0px 5px;
-        margin-right: 10px;
-        font-size: 1.5rem;
+        margin-right: 20px;
+        font-size: 1.2rem;
+        color: #fff;
+        text-shadow: 0px 0px 10px $colorSegundo;
       }
     }
 
     button {
-      border: none;
-      background-color: transparent;
       transition: all 0.5s linear;
       padding: 5px 10px;
-      margin: 10px auto;
-      font-size: 1.5rem;
+      margin: 5px auto;
+      font-size: 1.2rem;
+      border: 1px solid $colorSegundo;
+      color: $colorSegundo;
+      background-color: transparent;
+      box-shadow: 0px 0px 10px 0px $colorSegundo;
 
       &:hover {
         transform: scale(1.1);
         color: #fff;
-        background-color: $colorSegundo;
+        border: 1px solid #fff;
+        box-shadow: none;
       }
     }
   }

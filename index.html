@@ -33,33 +33,18 @@
       type="image/x-icon"
     />
     <!-- Titulo -->
-    <title>Diabetic Control</title>
+    <title>Client List</title>
   </head>
 
   <body>
     <!-- Header -->
     <header id="header">
-      <!-- Usuario -->
-      <div class="usuario" style="display: none">
-        <button
-          class="bi bi-person-fill"
-          onclick="verOpciones()"
-          aria-label="Ver Opciones"
-        >
-          <span id="spanOpcionesNombre"></span>
-          <span id="spanOpcionesApellido"></span>
-        </button>
-        <div id="divOpcionesImg">
-          <img src="Assets/Svg/logo.svg" alt="logo Diabetic Control" />
-          <p>Diabetic Control</p>
-        </div>
-      </div>
       <!-- NavBar -->
       <nav class="navbar">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="Assets/Svg/logo.svg" alt="logo diabetic control" />
-            <span>Diabetic Control</span>
+            <img src="Assets/Img/Icono.png" alt="logo diabetic control" />
+            <span>Client List</span>
           </a>
         </div>
       </nav>
@@ -71,13 +56,13 @@
       <section class="main-inicio">
         <div class="container">
           <button type="button" id="btnAgregar" class="btn btn-outline-primary">
-            Agregar Paciente
+            Agregar Cliente
             <i><i class="bi bi-person-plus-fill"></i></i>
           </button>
         </div>
         <div class="container">
           <button type="button" id="btnVer" class="btn btn-outline-secondary">
-            Ver Pacientes
+            Ver Clientes
             <i><i class="bi bi-people-fill"></i></i>
           </button>
         </div>
@@ -86,7 +71,7 @@
       <!-- Agregar Paciente -->
       <section class="main-agregar" style="display: none">
         <!-- Titulo -->
-        <p>Agrega un nuevo paciente con los siguientes datos.</p>
+        <p>Agrega un nuevo cliente con los siguientes datos.</p>
         <!-- Form -->
         <form id="formAgregar">
           <div class="mb-3">
@@ -110,13 +95,12 @@
             />
           </div>
           <div class="mb-3">
-            <label for="fehcaNacimiento" class="form-label"
-              >Fecha Nacimiento:</label
-            >
+            <label for="edad" class="form-label">Dirección:</label>
             <input
-              type="date"
+              type="text"
               class="form-control"
-              id="fechaNacimiento"
+              id="dirección"
+              placeholder="San Marcos, Carazo"
               required
             />
           </div>
@@ -150,7 +134,7 @@
       <!-- Ver Pacientes -->
       <section class="main-ver" style="display: none">
         <!-- Titulo -->
-        <p>Selecciona un pacientes.</p>
+        <p>Selecciona un cliente.</p>
         <!-- Form -->
         <form>
           <input
@@ -171,44 +155,13 @@
               <th scope="col">Nombre</th>
               <th scope="col">Apellido</th>
               <th scope="col">Teléfono</th>
-              <th scope="col">Fecha Nacimiento</th>
+              <th scope="col">Dirección</th>
               <th scope="col">Opciones</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
         </table>
       </section>
-
-      <!-- Opciones -->
-      <section class="main-opciones" style="display: none">
-        <div class="síntomas">
-          <p>Descubre si tu paciente tiene los síntomas</p>
-          <button type="button" id="btnSíntomas" class="btn">Entrar</button>
-        </div>
-        <div class="pruebas">
-          <p>Realiza estas pruebas si tienes sospechas</p>
-          <button type="button" id="btnPruebas" class="btn">Entrar</button>
-        </div>
-        <div class="registros">
-          <p>Consulta tus registros sobre el paciente</p>
-          <button type="button" id="btnRegistros" class="btn">Entrar</button>
-        </div>
-        <div class="diagnostico">
-          <p>Consulta tu diagnostico sobre el paciente</p>
-          <button type="button" id="btnDiagnostico" class="btn">Entrar</button>
-        </div>
-        <div class="citas">
-          <p>Agenda citas y envía tus diagnóstico</p>
-          <button type="button" id="btnCitas" class="btn">Entrar</button>
-        </div>
-        <div class="educación">
-          <p>Descubre sobre la diabetes</p>
-          <button type="button" id="btnEducación" class="btn">Entrar</button>
-        </div>
-      </section>
-
-      <!-- Funcionalidades -->
-      <section class="main-funcionalidades" style="display: none"></section>
     </main>
 
     <!-- Footer -->

@@ -1,11 +1,11 @@
 // importaciones de los archivos scss
+@import 'mixin';
+@import 'animaciones';
 @import 'header';
 @import 'inicio';
 @import 'agregar';
 @import 'ver';
-@import 'opciones';
 @import 'footer';
-@import 'mixin';
 
 // Estilos generales
 html {
@@ -29,7 +29,7 @@ body {
   cursor: pointer;
   transition: all 0.5s linear;
   padding: 5px 10px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border: 1px solid $colorPrimero;
   color: #000;
   background-color: transparent;
@@ -44,7 +44,7 @@ body {
   cursor: pointer;
   transition: all 0.5s linear;
   padding: 5px 10px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border: 1px solid $colorPrimero;
   color: #000;
   background-color: transparent;
@@ -56,58 +56,17 @@ body {
   }
 }
 
-.modal-content {
-  @include display();
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.7);
-
-  .close {
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 2rem;
-  }
-
-  p {
-    font-size: 1.5rem;
-  }
-}
-
-.cerrarSesión {
-  cursor: pointer;
-  transition: all 0.5s linear;
-  margin-top: 10px;
-  padding: 5px 10px;
-  font-size: 1.5rem;
-  border: 1px solid #fff;
-  color: #fff;
-  background-color: transparent;
-
-  &:hover {
-    transform: scale(1.1);
-    background-color: #ff0000;
-    color: #000;
-  }
-}
-
 // Clases para el intro del inicio de carga
 .loading {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
 }
 
 .loading:after {
   content: ' ';
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   margin: 2px;
   border-radius: 50%;
   border: 6px solid #fff;
@@ -127,16 +86,6 @@ body {
   background-color: rgba(0, 0, 0, 0.9);
 
   p {
-    font-size: 4rem;
-  }
-}
-
-// Animaciones
-@keyframes loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+    font-size: 3rem;
   }
 }
